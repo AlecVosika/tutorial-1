@@ -15,11 +15,11 @@ module.exports = function() {
     var numOfBuilders = _.sum(Game.creeps, (c) => c.memory.role == 'builder');
     var numOfRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer');
 
-    // setup some minimum numbers for different roles
-    var minNumOfHarvesters = 4;
-    var minNumOfUpgraders = 1;
-    var minNumOfBuilders = 1;
-    var minNumOfRepairers = 1;
+    // setup some maximum numbers for different roles
+    var maxNumOfHarvesters = 4;
+    var maxNumOfUpgraders = 1;
+    var maxNumOfBuilders = 1;
+    var maxNumOfRepairers = 1;
     
     // stores the value for the amount of energy available in a room
     var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
@@ -27,7 +27,7 @@ module.exports = function() {
     var name = undefined;
 
     // if not enough harvesters
-    if (numOfHarvesters < minNumOfHarvesters) {
+    if (numOfHarvesters < maxNumOfHarvesters) {
         // try to spawn one
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'harvester')
 
@@ -39,17 +39,17 @@ module.exports = function() {
         }
     }
     // if not enough upgraders
-    else if (numOfUpgraders < minNumOfUpgraders) {
+    else if (numOfUpgraders < maxNumOfUpgraders) {
         // try to spawn one
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'upgrader')
     }
     // if not enough builders
-    else if (numOfBuilders < minNumOfBuilders) {
+    else if (numOfBuilders < maxNumOfBuilders) {
         // try to spawn one
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'builder')
     }
     // if not enough repairers
-    else if (numOfRepairers < minNumOfRepairers) {
+    else if (numOfRepairers < maxNumOfRepairers) {
         // try to spawn one
         name = Game.spawns.Spawn1.createCustomCreep(energy, 'repairer')
     }
