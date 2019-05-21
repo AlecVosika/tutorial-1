@@ -1,3 +1,8 @@
+/*
+the repairer is working when it is repairing structures 
+and not working any other time
+*/
+
 var roleBuilder = require('role.builder');
 
 module.exports = {

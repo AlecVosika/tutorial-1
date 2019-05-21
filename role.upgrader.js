@@ -1,5 +1,5 @@
 /*
-the upgrader is working when it is bringing energy to the spawn
+the upgrader is working when it is upgrading the room controler
 and not working any other time
 */
 

@@ -1,5 +1,5 @@
 /*
-the builder is working when it is bringing energy to the spawn
+the builder is working when it is building construction sites
 and not working any other time
 */
 
