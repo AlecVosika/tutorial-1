@@ -10,7 +10,7 @@ module.exports = function() {
     // count the number of creeps alive for each role
     // _.sum will count the number of properties in Game.creeps filtered by the
     //  arrow function, which checks for the creep being a harvester
-    var numOfHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');    var numberOfHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
+    var numOfHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
     var numOfUpgraders = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader');
     var numOfBuilders = _.sum(Game.creeps, (c) => c.memory.role == 'builder');
     var numOfRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer');
