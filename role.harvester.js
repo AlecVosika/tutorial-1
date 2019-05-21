@@ -1,3 +1,8 @@
+/*
+the harvester is working when it is bringing energy to the spawn
+and not working any other time
+*/
+
 module.exports = {
     // a function to run the logic for this role
     run: function(creep) {
