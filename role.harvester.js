@@ -1,7 +1,9 @@
 /*
-the harvester is working when it is bringing energy to the spawn
+the harvester is working when it is bringing energy to the spawn or an extension
 and not working any other time
 */
+
+var roleBuilder = require('role.builder');
 
 module.exports = {
     // a function to run the logic for this role
@@ -34,6 +36,11 @@ module.exports = {
                     // move towards it
                     creep.moveTo(structure);
                 }
+            }
+            // if all energy storage sources are full
+            else{
+                // go build construction sites
+                roleBuilder.run(creep);
             }
         }
         // if creep is supposed to harvest energy from source
