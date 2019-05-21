@@ -8,11 +8,13 @@
         var numOfHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');    var numberOfHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
         var numOfUpgraders = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader');
         var numOfBuilders = _.sum(Game.creeps, (c) => c.memory.role == 'builder');
-        
+        var numOfRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer');
+
         // setup some minimum numbers for different roles
-        var minNumOfHarvesters = 10;
-        var minNumOfUpgraders = 1;
-        var minNumOfBuilders = 1;
+        var minNumOfHarvesters = 5;
+        var minNumOfUpgraders = 2;
+        var minNumOfBuilders = 5;
+        var minNumOfRepairers = 2;
         
         var name = undefined;
 
@@ -34,11 +36,12 @@
             name = Game.spawns.Spawn1.createCreep([WORK,WORK,CARRY,MOVE], undefined,
                 { role: 'builder', working: false});
         }
-        else {
-/*             // else try to spawn a builder
+        // if not enough repairers
+        else if (numOfRepairers < minNumOfRepairers) {
+            // try to spawn one
             name = Game.spawns.Spawn1.createCreep([WORK,WORK,CARRY,MOVE], undefined,
-                { role: 'builder', working: false}); */
-            }
+                { role: 'repairer', working: false});
+        }
 
         // print name to console if spawning was a success
         if (typeof(name) == "string") {
