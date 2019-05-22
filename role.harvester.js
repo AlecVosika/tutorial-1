@@ -30,13 +30,15 @@ module.exports = {
                              || s.structureType == STRUCTURE_EXTENSION) // checked is capable of taking energy
                              && s.energy < s.energyCapacity
             });
-
             // if we found one
             if (structure != undefined) {
                 // try to transfer energy, if it is not in range
                 if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     // move towards it
-                    creep.moveTo(structure);
+                    creep.moveTo(structure, {visualizePathStyle:{stroke: '#00FF00', 
+                    opacity: .9, 
+                    strokeWidth: .1,
+                    lineStyle: 'dotted'}});
                 }
             }
             // if all energy storage sources are full
@@ -52,7 +54,10 @@ module.exports = {
             // try to harvest energy, if the source is not in range
             if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 // move towards the source
-                creep.moveTo(source);
+                creep.moveTo(source, {visualizePathStyle:{stroke: '#FFD700', 
+                                                          opacity: .9, 
+                                                          strokeWidth: .1,
+                                                          lineStyle: 'dotted'}});
             }
         }
     }

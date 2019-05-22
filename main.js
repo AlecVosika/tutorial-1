@@ -4,6 +4,7 @@ var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var checkSpawn = require('check.spawn');
 var roleRepairer = require('role.repairer');
+var roleWallRepairer = require('role.wallRepairer');
 
 module.exports.loop = function () {
     // check for memory entries of died creeps by iterating over Memory.creeps
@@ -35,6 +36,10 @@ module.exports.loop = function () {
         // if creep is repairer, call builder script
         else if (creep.memory.role == 'repairer') {
             roleRepairer.run(creep);
+        }
+        // if creep is wallRepairer, call wallRepairer script
+        else if (creep.memory.role == 'wallRepairer') {
+            roleWallRepairer.run(creep);
         }
     }
 
