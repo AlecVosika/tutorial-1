@@ -17,7 +17,7 @@ module.exports = function() {
     var numOfWallRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer');
 
     // setup some maximum numbers for different roles
-    var maxNumOfHarvesters = 4;
+    var maxNumOfHarvesters = 3;
     var maxNumOfUpgraders = 1;
     var maxNumOfBuilders = 1;
     var maxNumOfRepairers = 1;

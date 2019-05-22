@@ -36,9 +36,9 @@ module.exports = {
                 if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     // move towards it
                     creep.moveTo(structure, {visualizePathStyle:{stroke: '#00FF00', 
-                    opacity: .9, 
-                    strokeWidth: .1,
-                    lineStyle: 'dotted'}});
+                                                                 opacity: .9, 
+                                                                 strokeWidth: .05,
+                                                                 lineStyle: 'undefined'}});
                 }
             }
             // if all energy storage sources are full
@@ -56,8 +56,8 @@ module.exports = {
                 // move towards the source
                 creep.moveTo(source, {visualizePathStyle:{stroke: '#FFD700', 
                                                           opacity: .9, 
-                                                          strokeWidth: .1,
-                                                          lineStyle: 'dotted'}});
+                                                          strokeWidth: .05,
+                                                          lineStyle: 'undefined'}});
             }
         }
     }

@@ -42,6 +42,9 @@ module.exports.loop = function () {
             roleWallRepairer.run(creep);
         }
     }
-
-    checkSpawn();
+    
+    
+        checkSpawn();
+    
+    
 };

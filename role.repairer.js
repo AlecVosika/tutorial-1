@@ -36,7 +36,10 @@ module.exports = {
                 // try to repair it, if it is out of range
                 if (creep.repair(structure) == ERR_NOT_IN_RANGE) {
                     // move towards it
-                    creep.moveTo(structure);
+                    creep.moveTo(structure, {visualizePathStyle:{stroke: '#FF00FF', 
+                                                                 opacity: .9, 
+                                                                 strokeWidth: .05,
+                                                                 lineStyle: 'undefined'}});
                 }
             }
             // if we can't fine one
@@ -52,7 +55,10 @@ module.exports = {
             // try to harvest energy, if the source is not in range
             if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 // move towards the source
-                creep.moveTo(source);
+                creep.moveTo(source, {visualizePathStyle:{stroke: '#FFD700', 
+                                                          opacity: .9, 
+                                                          strokeWidth: .05,
+                                                          lineStyle: 'undefined'}});
             }
         }
     }

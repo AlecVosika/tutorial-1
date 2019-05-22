@@ -1,7 +1,6 @@
 /*
 This function continuously makes better creeps based on the amount of energy available
 */
-let count = 0;
 
 module.exports = function() {
     // create a new function for StructureSpawn
@@ -19,9 +18,12 @@ module.exports = function() {
             for (let i = 0; i < numberOfParts; i++) {
                 body.push(MOVE);
             }
-
             // create creep with the created body and the given role
-//            console.log('what the fuck is going on ---- ', count);
-            return this.createCreep(body, roleName + count++, { role: roleName, working: false });
+            if (roleName == 'wallRepairer'){
+                return this.createCreep(body, 'Trump', { role: roleName, working: false });
+            }
+            else{
+                return this.createCreep(body, undefined, { role: roleName, working: false });
+            }
         };
 };
